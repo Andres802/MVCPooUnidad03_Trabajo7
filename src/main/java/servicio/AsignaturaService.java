@@ -14,6 +14,7 @@ import modelo.*;
 public interface AsignaturaService {
     
     public abstract void crear(Asignatura asignatura);
+    public abstract Asignatura codigoAsignautra(int codigo);
     public abstract List<Asignatura> listar();
     
 }

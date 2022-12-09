@@ -35,5 +35,19 @@ public class ProfesorServiceImpI implements ProfesorService{
         return this.profesorList;
         
     }
+
+    @Override
+    public Profesor codigoProfesor(int codigo) {
+        
+        Profesor retorno = null;
+        for(var profesor:this.profesorList){
+            if(codigo==profesor.getCodigo()){
+                retorno = profesor;
+                break;
+            }
+        }
+        return retorno;
+    }
+    
     
 }

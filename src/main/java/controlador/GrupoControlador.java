@@ -20,36 +20,20 @@ import servicio.*;
 public class GrupoControlador {
     
      private  GrupoServiceImpI grupoServi;
-     
+     private  AsignaturaServiceImpI asignaturaServi;
+     private ProfesorServiceImpI profesorServi;
     public GrupoControlador() {
         this.grupoServi = new GrupoServiceImpI();
+        this.asignaturaServi = new AsignaturaServiceImpI();
+        this.profesorServi = new ProfesorServiceImpI();
     }
     public void crear(String[] data) {
         var numeroGrupo = Integer.valueOf(data[0]).intValue();
-        var aula = Integer.valueOf(data[1]).intValue();;
+        var aula = Integer.valueOf(data[1]).intValue();
         var numeroAlumnos = Integer.valueOf(data[2]).intValue();
         var nivelCiclo= data[3];
-        
-        //--------------------------------------------------------//
-        var codigo1 = Integer.valueOf(data[4]);
-        var nombreMateria = data[5];
-        var horasClases = data[6];
-        var planEstudio = data[7];
-        var carreraAsignatura = data[8];
-        var asignatura = new Asignatura(codigo1,nombreMateria,horasClases,planEstudio,carreraAsignatura);
-        
-        //---------------------------------------------------------------//
-        var codigo2 = Integer.valueOf(data[9]).intValue();
-        var nombre = data[10];
-        var year = Integer.valueOf(data[11]).intValue();
-        var mes = Integer.valueOf(data[12]).intValue();
-        var dia = Integer.valueOf(data[13]).intValue();
-        var fecha = LocalDate.of(year,mes, dia);
-        var profesion = data[14];
-        var correo = data[15];
-        var genero = data[16];
-        var profesor = new Profesor(codigo2,nombre,fecha,profesion,correo,genero);
-        //---------------------------------------------------------------//
+        var asignatura = this.asignaturaServi.codigoAsignautra(Integer.valueOf(data[4]).intValue());
+        var profesor = this.profesorServi.codigoProfesor(Integer.valueOf(data[5]).intValue());
         
         var grupo = new Grupo(numeroGrupo,aula,numeroAlumnos,nivelCiclo,asignatura,profesor);
         this.grupoServi.crear(grupo);

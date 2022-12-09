@@ -27,6 +27,19 @@ public class AsignaturaServiceImpI implements AsignaturaService{
         return this.asignaturaList;
     }
 
+    @Override
+    public Asignatura codigoAsignautra(int codigo) {
+    
+        Asignatura retorno = null;
+        for(var asignatura:this.asignaturaList){
+            if(codigo==asignatura.getCodigo()){
+                retorno = asignatura;
+                break;
+            }
+        }
+        return retorno;
+    }
+
 
     
     

@@ -14,5 +14,6 @@ import modelo.Profesor;
 public interface ProfesorService {
     
     public abstract void crear(Profesor profesor);
+    public abstract Profesor codigoProfesor(int codigo);
     public abstract List<Profesor> listar();
 }

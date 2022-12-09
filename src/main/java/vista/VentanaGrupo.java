@@ -218,8 +218,8 @@ public class VentanaGrupo extends JFrame implements ActionListener {
         } else if (this.jRadioButtonList.get(1).isSelected()) {
             retorno[3] = this.jRadioButtonList.get(1).getText();
         }
-        retorno[5] = this.jTextFieldList.get(2).getText();
-        retorno[10] = this.jTextFieldList.get(3).getText();
+        retorno[4] = this.jTextFieldList.get(2).getText();
+        retorno[5] = this.jTextFieldList.get(3).getText();
 
         return retorno;
     }
